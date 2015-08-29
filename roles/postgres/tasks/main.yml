@@ -1,0 +1,21 @@
+---
+- name: Install Postgresql
+  apt: pkg={{item}} state=present update-cache=yes
+  sudo: yes
+  with_items:
+    - libpq-dev
+    - postgresql-9.4
+    - python-psycopg2
+  tags: packages
+
+- name: Copy valid pg_hba.conf
+  template: src=pg_hba.conf.j2 dest=/etc/postgresql/9.4/main/pg_hba.conf
+  sudo: yes
+
+- name: create postgres user
+  postgresql_user:
+    name: postgres
+    password: postgres
+    login_user: postgres
+  sudo_user: postgres
+  sudo: yes

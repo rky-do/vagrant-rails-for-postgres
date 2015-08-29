@@ -1,0 +1,7 @@
+- hosts: vagrant
+  user: vagrant
+  roles:
+    - role: common
+    - role: rbenv
+    - role: rails
+    - role: postgres
