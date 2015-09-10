@@ -17,6 +17,7 @@
     - build-essential
     - curl
     - git-core
+    - tig
     - bash-completion
     - libssl-dev
     - libreadline-dev
