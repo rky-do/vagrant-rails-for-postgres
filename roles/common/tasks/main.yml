@@ -30,11 +30,11 @@
     - zlib1g-dev
   tags: common
 
-- name: install ack-grep
+- name: install silversearcher-ag
   apt: pkg={{item}} state=present update_cache=yes
   sudo: yes
   with_items:
-    - ack-grep
+    - silversearcher-ag
   tags: common
 
 - name: install phantomjs
